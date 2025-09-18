@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — Crack Jee</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7; /* mint */
+      --accent-2:#60a5fa; /* blue */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(800px 400px at 10% 10%, rgba(96,165,250,0.06), transparent 10%),
+        radial-gradient(600px 300px at 90% 90%, rgba(110,231,183,0.04), transparent 10%),
+        var(--bg);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .container{
+      width:100%;
+      max-width:980px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:28px;
+      align-items:center;
+    }
+
+    /* Left hero */
+    .hero{
+      padding:32px;
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      min-height:360px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo{
+      height:56px;
+      width:56px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(135deg,var(--accent),var(--accent-2));
+      font-weight:700;
+      color:#062024;
+      font-size:20px;
+      box-shadow: 0 6px 18px rgba(96,165,250,0.08);
+    }
+    h1{margin:0;font-size:28px}
+    p.lead{margin:0;color:var(--muted); max-width:46ch; line-height:1.5}
+
+    /* Card */
+    .card{
+      padding:28px;
+      border-radius:18px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+    }
+    form{display:flex;flex-direction:column;gap:14px}
+    label{font-size:13px;color:var(--muted)}
+    input[type="email"], input[type="password"]{
+      width:100%;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.02);
+      color:inherit;
+      outline: none;
+      font-size:14px;
+    }
+    .row{display:flex;gap:12px;align-items:center;justify-content:space-between}
+    .checkbox{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:13px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:10px;
+      border: none;
+      cursor:pointer;
+      font-weight:600;
+      font-size:15px;
+    }
+    .btn-primary{background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:#042026; box-shadow: 0 8px 24px rgba(96,165,250,0.08);}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04); color:var(--muted);}
+    .muted{color:var(--muted);font-size:13px}
+
+    .divider{height:1px;background:rgba(255,255,255,0.03);margin:8px 0;border-radius:999px}
+
+    .socials{display:flex;gap:10px}
+    .socials .btn{padding:10px 12px;font-weight:600}
+
+    .help{font-size:13px;color:var(--muted); text-align:center}
+
+    /* small screens */
+    @media (max-width:880px){
+      .container{grid-template-columns:1fr; padding:14px}
+      .hero{order:2}
+    }
+  </style>
+</head>
+<body>
+  <main class="container" role="main">
+    <section class="hero" aria-hidden="false">
+      <div class="brand" aria-hidden="false">
+        <div class="logo" aria-hidden="true">CJ</div>
+        <div>
+          <div style="color:var(--muted);font-size:13px">Welcome to</div>
+          <div style="font-weight:700;font-size:18px">Crack Jee</div>
+        </div>
+      </div>
+
+      <h1>Sign in to your account</h1>
+      <p class="lead">Access your dashboard, manage orders, and sync your collections. Secure login with email or continue with social sign-in for quick access.</p>
+
+      <div style="margin-top:18px;color:var(--muted)">
+        <strong style="display:block;margin-bottom:6px">Quick tips</strong>
+        <ul style="margin:0;padding-left:18px;color:var(--muted);line-height:1.6">
+          <li>Use your registered email for full access</li>
+          <li>Enable two-factor authentication after login</li>
+        </ul>
+      </div>
+    </section>
+
+    <aside class="card" aria-labelledby="loginTitle">
+      <h2 id="loginTitle" style="margin:0 0 6px 0">Login</h2>
+      <p class="muted" style="margin:0 0 12px 0">Enter your credentials to continue</p>
+
+      <form id="loginForm" onsubmit="login(event)" autocomplete="on" novalidate>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required aria-required="true" />
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <div style="position:relative;">
+            <input id="password" name="password" type="password" placeholder="••••••••" required aria-required="true" />
+            <button type="button" id="togglePwd" aria-label="Show password" style="position:absolute;right:8px;top:6px;background:transparent;border:none;color:var(--muted);cursor:pointer;font-weight:600">Show</button>
+          </div>
+        </div>
+
+        <div class="row" style="align-items:center">
+          <label class="checkbox"><input type="checkbox" id="remember" style="width:16px;height:16px" /> Remember me</label>
+          <a href="#" class="muted" style="text-decoration:none">Forgot?</a>
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-primary" aria-live="polite">Sign in</button>
+        </div>
+
+        <div class="divider" role="separator" aria-hidden="true"></div>
+
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button type="button" class="btn btn-ghost" onclick="social('google')" aria-label="Sign in with Google">Continue with Google</button>
+          <button type="button" class="btn btn-ghost" onclick="social('apple')" aria-label="Sign in with Apple">Continue with Apple</button>
+        </div>
+
+        <p class="help">Don't have an account? <a href="#" style="color:var(--accent-2);text-decoration:none">Create one</a></p>
+      </form>
+    </aside>
+  </main>
+
+  <script>
+    // Toggle password visibility
+    const pwd = document.getElementById('password');
+    const toggle = document.getElementById('togglePwd');
+    toggle.addEventListener('click', () => {
+      if (pwd.type === 'password') {
+        pwd.type = 'text';
+        toggle.textContent = 'Hide';
+        toggle.setAttribute('aria-label', 'Hide password');
+      } else {
+        pwd.type = 'password';
+        toggle.textContent = 'Show';
+        toggle.setAttribute('aria-label', 'Show password');
+      }
+    });
+
+    // Fake login handler (replace with real API)
+    function login(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = pwd.value;
+      if(!email || !password){
+        alert('Please fill email and password');
+        return;
+      }
+      // Basic client-side email format
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if(!valid){ alert('Enter a valid email'); return; }
+
+      // TODO: call your API here (fetch/axios)
+      // Example:
+      // fetch('/api/auth/login', { method:'POST', body: JSON.stringify({email,password})})
+      //  .then(...)
+
+      // For demo:
+      alert('Logged in (demo). Replace this with real API call.');
+    }
+
+    function social(provider){
+      alert('Social sign-in: ' + provider + ' (demo)');
+    }
+  </script>
+</body>
+</html>
+
